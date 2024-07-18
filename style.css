@@ -143,6 +143,10 @@
     color: var(--color3);
 }
 
+body {
+  background-color: var(--color2);
+}
+
 a {
     text-decoration: none;
 }
@@ -151,6 +155,7 @@ nav {
     width: 100%;
     height: 67px;
     display: flex;
+    background-color: var(--color1);
 }
 
 #nav {
@@ -236,7 +241,7 @@ nav {
 
 .dropdown {
   width: 95%;
-  background-color: var(--color7);
+  background-color: var(--color14);
   color: var(--color24);
   position: fixed;
   z-index: 20;
@@ -246,6 +251,11 @@ nav {
   opacity: 0;
   transition: opacity 0.2ms ease;
   /* box-shadow: var(--color16); */
+}
+
+.dropdown.active {
+  display: block;
+  opacity: 1;
 }
 
 .drop-content {
@@ -332,12 +342,13 @@ nav {
 }
 
 #slide-container {
+  background-color: var(--color2);
   width: 100%;
 }
 
 .slides {
   display: flex;
-  max-width: 99vw;
+  max-width: 100vw;
   margin: 0;
   overflow: hidden;
 }
@@ -355,7 +366,7 @@ nav {
 
 .slide-images {
   height: 540px;
-  width: 99vw;
+  width: 100vw;
   margin: 0;
   padding: 0;
 }
@@ -460,4 +471,74 @@ nav {
 
 #slide-text6 h3, #slide-text6 p {
   color: var(--color1);
+}
+
+#slide-counters {
+  display: flex;
+  width: 78px;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  margin: 15px auto;
+}
+
+.slide-counter {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: var(--color6);
+}
+
+.slide-counter.active {
+  background-color: var(--color25);
+}
+
+#ad-container {
+  width: fit-content;
+  margin: 30px auto;
+}
+
+#ad-container h2, #news-section h2 {
+  font-size: 42px;
+  text-align: center;
+  color: var(--color3);
+}
+
+.ads {
+  width: fit-content;
+  display: flex;
+  align-content: space-between;
+  gap: 15px;
+  margin: 20px auto;
+}
+
+.ad {
+  display: flex;
+  flex-direction: column;
+}
+
+.ad:hover {
+  opacity: 0.8;
+}
+
+.ad p {
+  font-size: 17px;
+  color: var(--color25);
+  font-weight: 500;
+}
+
+.material-icons {
+  text-align: center;
+}
+
+#news-section {
+  margin-top: 80px;
+}
+
+#photo-grid {
+  display: flex;
+  width: fit-content;
+  margin: 35px auto;
+  align-content: space-between;
+  gap: 10px;
 }
