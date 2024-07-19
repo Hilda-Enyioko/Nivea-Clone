@@ -144,7 +144,7 @@
 }
 
 body {
-  background-color: var(--color2);
+  background-color: var(--color12);
 }
 
 a {
@@ -342,7 +342,7 @@ nav {
 }
 
 #slide-container {
-  background-color: var(--color2);
+  background-color: var(--color12);
   width: 100%;
 }
 
@@ -356,7 +356,6 @@ nav {
 .slide {
   min-width: 100%;
   box-sizing: border-box;
-  transition: opacity 1s ease-in-out;
   display: none;
 }
 
@@ -402,7 +401,7 @@ nav {
 }
 
 #slide-button-right {
-  right: 40px;
+  right: 30px;
 }
 
 .slide-text {
@@ -482,14 +481,14 @@ nav {
   margin: 15px auto;
 }
 
-.slide-counter {
+.slide-counter, .mini-counter {
   height: 5px;
   width: 5px;
   border-radius: 50%;
   background-color: var(--color6);
 }
 
-.slide-counter.active {
+.slide-counter.active, .mini-counter.active {
   background-color: var(--color25);
 }
 
@@ -498,7 +497,7 @@ nav {
   margin: 30px auto;
 }
 
-#ad-container h2, #news-section h2 {
+#ad-container h2, #news-section h2, #history-section h2 {
   font-size: 42px;
   text-align: center;
   color: var(--color3);
@@ -508,8 +507,8 @@ nav {
   width: fit-content;
   display: flex;
   align-content: space-between;
-  gap: 15px;
-  margin: 20px auto;
+  gap: 60px;
+  margin: 30px auto;
 }
 
 .ad {
@@ -525,6 +524,7 @@ nav {
   font-size: 17px;
   color: var(--color25);
   font-weight: 500;
+  margin-top: 15px;
 }
 
 .material-icons {
@@ -535,10 +535,177 @@ nav {
   margin-top: 80px;
 }
 
+#news-section {
+  width: 100%;
+}
+
 #photo-grid {
-  display: flex;
-  width: fit-content;
-  margin: 35px auto;
-  align-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 10px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.grid, .grid-item, .grid-item a, .grid-image, .grid-image img {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.grid-image img {
+  transition: transform 0.9s ease;
+}
+
+.grid-image:hover img {
+  transform: scale(1.2);
+}
+
+.grid-item {
+  margin-bottom: 10px;
+}
+
+.grid-text {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  width: 100%;
+  background-color: var(--color1);
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#editor-section h2, #editor-section h3, #editor-section p {
+  text-align: center;
+}
+
+#editor-section h2 {
+  font-size: 30px;
+}
+
+#picks {
+  width: 58%;
+  margin: 35px auto;
+  display: flex;
+  align-content: space-between;
+  gap: 20px;
+}
+
+#pick1, #pick2 {
+  width: 45%;
+}
+
+#pick1 img, #pick2 img {
+  width: 100%;
+  margin: 0;
+}
+
+
+#history-section {
+  margin-top: 100px;
+}
+
+#mini-slide-container {
+  width: 96vw;
+  box-sizing: border-box;
+}
+
+#mini-counters {
+  display: flex;
+  width: 20px;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  margin: 20px auto 50px;
+}
+
+.mini-slides {
+  width: 85vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.mini-slide {
+  max-width: 85%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  transition: opacity 1s ease-in-out;
+  display: none;
+}
+
+.mini-slide.active {
+  display: grid;
+}
+
+.slide-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.figures {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: var(--color3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.figures h3, .figures p {
+  color: var(--color1);
+  text-align: center;
+}
+
+.figures h3 {
+  font-size: 50px;
+}
+
+.figures p {
+  font-weight: 700;
+}
+
+.mini-text {
+  margin-top: 40px;
+}
+
+.mini-text p {
+  text-align: center;
+}
+
+.mini-slide-button {
+  position: absolute;
+  top: 500%;
+  transform: translateY(-40%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color1);
+  color: var(--color25);
+  border: none;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  outline: none;
+  z-index: 10;
+  font-weight: 200;
+  transition: all 0.2s ease-in-out;
+}
+
+.mini-slide-button:hover {
+  width: 55px;
+  height: 55px;
+  font-size: 32px;
+}
+
+#mini-slide-button-left {
+  left: 30px;
+}
+
+#mini-slide-button-right {
+  right: 30px;
 }

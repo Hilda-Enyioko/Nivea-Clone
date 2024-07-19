@@ -42,7 +42,6 @@ navLinks.forEach((navLink, index) => {
 const slides = document.querySelectorAll(".slide");
 const slideLength = slides.length;
 let currentSlide = 0;
-const slideButtons = document.querySelectorAll('.slide-button');
 const slideButtonLeft = document.querySelector('#slide-button-left');
 const slideButtonRight = document.querySelector('#slide-button-right');
 const slideCounters = document.querySelectorAll('.slide-counter');
@@ -67,3 +66,31 @@ setInterval(changeSlideForward, 3000);
 
 slideButtonLeft.addEventListener('click', changeSlideBackward);
 slideButtonRight.addEventListener('click', changeSlideForward);
+
+
+// Mini-Slide
+const miniSlides = document.querySelectorAll('.mini-slide');
+const miniSlideLength = miniSlides.length;
+const miniCounters = document.querySelectorAll('.mini-counter');
+const miniSlideButtonLeft = document.querySelector('#mini-slide-button-left');
+const miniSlideButtonRight = document.querySelector('#mini-slide-button-right');
+let thisSlide = 0;
+
+function changeMiniSlideForward() {
+    miniSlides[thisSlide].classList.remove('active');
+    miniCounters[thisSlide].classList.remove('active');
+    thisSlide = (thisSlide + 1) % miniSlideLength;
+    miniSlides[thisSlide].classList.add('active');
+    miniCounters[thisSlide].classList.add('active');
+}
+
+function changeMiniSlideBackward() {
+    miniSlides[thisSlide].classList.remove('active');
+    miniCounters[thisSlide].classList.remove('active');
+    thisSlide = (thisSlide - 1) % miniSlideLength;
+    miniSlides[thisSlide].classList.add('active');
+    miniCounters[thisSlide].classList.add('active');
+}
+
+miniSlideButtonLeft.addEventListener('click', changeMiniSlideBackward);
+miniSlideButtonRight.addEventListener('click', changeMiniSlideForward);
