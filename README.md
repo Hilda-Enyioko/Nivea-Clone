@@ -1,6 +1,6 @@
 # Nivea-Clone
 
-[!Nivea Clone Landing Page](./images/landing-page.png)
+[!Nivea Clone Landing Page](images/landing-page.png)
 A clone of the nivea.com.ng home page.
 
 ## DISCLAIMER
