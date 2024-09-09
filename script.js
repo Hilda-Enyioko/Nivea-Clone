@@ -44,6 +44,19 @@ slideButtonLeft.addEventListener('click', changeSlideBackward);
 slideButtonRight.addEventListener('click', changeSlideForward);
 
 
+// Mini-Slide
+const miniSlide = document.querySelector('#mini-slides');
+
+const miniSlides = document.querySelectorAll('.mini-slide');
+
+const miniSlideLength = miniSlides.length;
+
+const miniCounters = document.querySelectorAll('.mini-counter');
+
+const miniSlideButtonLeft = document.querySelector('#mini-slide-button-left');
+
+const miniSlideButtonRight = document.querySelector('#mini-slide-button-right');
+
 let thisSlide = 0;
 
 function changeMiniSlideForward() {
