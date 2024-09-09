@@ -57,6 +57,14 @@ const miniSlideButtonLeft = document.querySelector('#mini-slide-button-left');
 
 const miniSlideButtonRight = document.querySelector('#mini-slide-button-right');
 
+const miniSlide1 = document.querySelector('.mini-slide1');
+
+const miniSlide2 = document.querySelector('.mini-slide2');
+
+const miniCounter1 = document.querySelector('.mini-count1');
+
+const miniCounter2 = document.querySelector('.mini-count2');
+
 let thisSlide = 0;
 
 function changeMiniSlideForward() {
@@ -83,9 +91,31 @@ function changeMiniSlideBackward() {
     miniCounters[thisSlide].classList.add('active');
 }
 
+setInterval(changeMiniSlideForward, 6000);
+
 miniSlideButtonLeft.addEventListener('click', changeMiniSlideBackward);
 
 miniSlideButtonRight.addEventListener('click', changeMiniSlideForward);
+
+miniCounter1.addEventListener('click', () => {
+    miniSlide2.classList.remove('active');
+    
+    miniCounter2.classList.remove('active');
+    
+    miniCounter1.classList.add('active');
+    
+    miniSlide1.classList.add('active');
+})
+
+miniCounter2.addEventListener('click', () => {
+    miniSlide1.classList.remove('active');
+    
+    miniCounter1.classList.remove('active');
+    
+    miniCounter2.classList.add('active');
+    
+    miniSlide2.classList.add('active');
+})
 
 
 //Media Screen Query
